@@ -11,7 +11,7 @@ build: off  # будем использовать свой скрипт сбор
 install:
   # запускаем SUT (& означает, что в фоновом режиме - не блокируем терминал для запуска тестов)
   - java -jar ./artifacts/app-order.jar &
-  - chmod +x gradlew
 
 build_script:
-  ./gradleview test --info -Dselenide.headless=true  # запускаем тест, флаг --info позволяет выводить больше информации
+  - chmod +x gradlew
+  - ./gradlew test -Dselenium.headless=true --info
