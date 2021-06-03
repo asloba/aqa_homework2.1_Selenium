@@ -5,12 +5,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.github.bonigarcia.seljup.SeleniumJupiter;
+//import io.github.bonigarcia.seljup.SeleniumJupiter;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,8 +44,8 @@ public class CardOrderTest {
 
     @Test
     void shouldSendForm() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
-        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79999999999");
+        driver.findElement(cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
+        driver.findElement(cssSelector("[data-test-id='phone'] input")).sendKeys("+79999999999");
         driver.findElement(cssSelector(".checkbox__box")).click();
         driver.findElement(cssSelector("button")).click();
         String message = driver.findElement(cssSelector("p")).getText();
@@ -89,8 +87,8 @@ public class CardOrderTest {
 
     @Test
     void shouldSendFormWithIncorrectName() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Ivanov Иван");
-        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79999999999");
+        driver.findElement(cssSelector("[data-test-id=name] input")).sendKeys("Ivanov Иван");
+        driver.findElement(cssSelector("[data-test-id='phone'] input")).sendKeys("+79999999999");
         driver.findElement(cssSelector(".checkbox__box")).click();
         driver.findElement(cssSelector("button")).click();
         String message = driver.findElement(cssSelector(".input_invalid .input__sub")).getText();
@@ -99,8 +97,8 @@ public class CardOrderTest {
 
     @Test
     void shouldSendFormWithIncorrectPhone() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Смирнов Иван");
-        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+799999111");
+        driver.findElement(cssSelector("[data-test-id=name] input")).sendKeys("Смирнов Иван");
+        driver.findElement(cssSelector("[data-test-id='phone'] input")).sendKeys("+799999111");
         driver.findElement(cssSelector(".checkbox__box")).click();
         driver.findElement(cssSelector("button")).click();
         String message = driver.findElement(cssSelector(".input_invalid .input__sub")).getText();
