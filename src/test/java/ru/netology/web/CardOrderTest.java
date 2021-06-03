@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.openqa.selenium.By.cssSelector;
 
-@ExtendWith(SeleniumJupiter.class)
+//@ExtendWith(SeleniumJupiter.class)
 
 public class CardOrderTest {
 
